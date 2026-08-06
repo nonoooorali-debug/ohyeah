@@ -1,0 +1,245 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+}
+
+.header,
+.clients,
+.footer {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 24px;
+  box-sizing: border-box;
+}
+
+.header {
+  padding-top: 82px;
+}
+
+.headerNav {
+  display: flex;
+  min-height: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: clamp(280px, 24vw, 340px);
+  min-height: 280px;
+  overflow: hidden;
+}
+
+.brandCarousel {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.brandCarouselVerticalCenter {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.brandWordMovingImage {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: clamp(180px, 22vw, 330px);
+  object-fit: contain;
+  user-select: none;
+  animation: brandMove 10s linear forwards;
+  will-change: transform;
+}
+
+.heroPhilosophy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin-inline: 0;
+  padding-inline: 24px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.heroPhilosophyImage {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  object-position: left center;
+}
+
+.logoSectionDivider {
+  width: 100%;
+  margin-top: calc(
+    82px -
+    (clamp(280px, 24vw, 340px) - clamp(180px, 22vw, 330px)) / 2
+  );
+  margin-bottom: 36px;
+}
+
+.logoSectionDividerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.clientLogoGrid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  column-gap: 58px;
+  row-gap: 88px;
+  width: 100%;
+}
+
+.clientLogoItem {
+  display: flex;
+  width: 100%;
+  max-width: 166px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.clientLogoImage {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100%, 166px);
+  max-height: 166px;
+  object-fit: contain;
+  opacity: 0.88;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.clientLogoItem:hover .clientLogoImage {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.footer {
+  padding-top: 110px;
+  padding-bottom: 30px;
+}
+
+.footer p {
+  margin: 0;
+  color: rgb(255 255 255 / 42%);
+  font-size: 8px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+@keyframes brandMove {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100vw); }
+}
+
+@media (max-width: 1199px) {
+  .header,
+  .clients,
+  .footer,
+  .heroPhilosophy {
+    padding-inline: 36px;
+  }
+
+  .clientLogoGrid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1023px) {
+  .header,
+  .clients,
+  .footer,
+  .heroPhilosophy {
+    padding-inline: 28px;
+  }
+
+  .clientLogoGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 48px 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header,
+  .clients,
+  .footer,
+  .heroPhilosophy {
+    padding-inline: 18px;
+  }
+
+  .header {
+    padding-top: 24px;
+  }
+
+  .headerNav {
+    min-height: 30px;
+    font-size: 13px;
+  }
+
+  .hero {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .brandWordMovingImage {
+    height: clamp(150px, 48vw, 190px);
+  }
+
+  .logoSectionDivider {
+    margin-top: 16px;
+    margin-bottom: 34px;
+  }
+
+  .clientLogoGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 24px;
+  }
+
+  .clientLogoItem {
+    max-width: 120px;
+  }
+
+  .clientLogoImage {
+    max-width: min(100%, 120px);
+    max-height: 120px;
+  }
+
+  .footer {
+    padding-top: 90px;
+    padding-bottom: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brandCarouselVerticalCenter {
+    left: 50%;
+  }
+
+  .brandWordMovingImage {
+    animation: none;
+    transform: translateX(-50%);
+  }
+
+  .clientLogoImage {
+    transition: none;
+  }
+}
