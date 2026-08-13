@@ -29,6 +29,19 @@ const categoryById = new Map<number, IndustryCategory>(
   ),
 );
 
+// Preserve the established on-page dimensions from the previous PNG assets.
+// SVG intrinsic canvas sizes must not determine the visual size in the grid.
+const legacyPngDisplaySizes: ReadonlyArray<readonly [number, number]> = [
+  [168, 44], [166, 42], [154, 63], [109, 103], [81, 104], [85, 97], [167, 60], [101, 110],
+  [152, 30], [134, 64], [96, 98], [144, 52], [137, 93], [137, 43], [165, 48], [140, 87],
+  [139, 87], [115, 116], [88, 117], [97, 126], [134, 46], [159, 18], [144, 106], [157, 26],
+  [157, 68], [125, 80], [92, 126], [120, 106], [114, 114], [136, 109], [157, 30], [153, 38],
+  [130, 111], [111, 112], [115, 56], [134, 78], [103, 98], [99, 96], [129, 82], [137, 49],
+  [90, 106], [137, 48], [150, 59], [147, 34], [91, 92], [146, 42], [141, 51], [133, 52],
+  [134, 76], [130, 49], [147, 27], [137, 38], [97, 88], [160, 33], [83, 102], [99, 84],
+  [102, 118], [89, 111], [119, 28], [103, 118], [122, 132],
+];
+
 export const CLIENT_LOGOS = Array.from({ length: 64 }, (_, index) => {
   const id = index + 1;
   const category = categoryById.get(id);
@@ -39,6 +52,7 @@ export const CLIENT_LOGOS = Array.from({ length: 64 }, (_, index) => {
     id,
     src: `/images/clients/brand logo (${id}).svg`,
     category,
+    displaySize: legacyPngDisplaySizes[index] ?? [166, 166],
     href:
       id === 1
         ? "/brand-pages/johnson"

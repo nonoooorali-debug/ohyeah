@@ -205,8 +205,8 @@
   display: block;
   width: auto;
   height: auto;
-  max-width: min(100%, 166px);
-  max-height: 166px;
+  max-width: min(100%, var(--client-logo-width, 166px), 166px);
+  max-height: var(--client-logo-height, 166px);
   object-fit: contain;
   opacity: 0.88;
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -325,8 +325,8 @@
   }
 
   .clientLogoImage {
-    max-width: min(100%, 120px);
-    max-height: 120px;
+    max-width: min(100%, var(--client-logo-width, 120px), 120px);
+    max-height: min(var(--client-logo-height, 120px), 120px);
   }
 
   .footer {
