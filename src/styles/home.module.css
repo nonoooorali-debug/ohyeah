@@ -29,6 +29,11 @@
   letter-spacing: -0.02em;
 }
 
+.headerNav a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .hero {
   position: relative;
   width: 100%;
@@ -184,6 +189,14 @@
   max-width: 166px;
   aspect-ratio: 1;
   margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.clientLogoLink {
+  display: flex;
+  width: 100%;
+  height: 100%;
   align-items: center;
   justify-content: center;
 }

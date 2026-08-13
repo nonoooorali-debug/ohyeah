@@ -1,0 +1,187 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: #fff;
+  color: #040000;
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  min-height: 178px;
+  padding: 86px 48px 34px;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.homeLink {
+  display: block;
+  width: clamp(190px, 13.7vw, 263px);
+  line-height: 0;
+}
+
+.homeLink img,
+.section img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.contactLink {
+  color: inherit;
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.content {
+  position: relative;
+  z-index: 0;
+  background: #f2f2f2;
+}
+
+.fixedLogoText {
+  position: fixed;
+  z-index: 0;
+  top: 260px;
+  left: 200px;
+  width: min(78.35vw, 1504px);
+  height: auto;
+  pointer-events: none;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 80px 54px;
+  border-bottom: 0.5px solid #a6a6a6;
+}
+
+.introduction {
+  display: grid;
+  min-height: 530px;
+  grid-template-columns: 300px minmax(0, 1fr);
+  column-gap: 110px;
+  padding-top: 88px;
+  align-items: start;
+}
+
+.introductionText {
+  width: 100%;
+}
+
+.introductionSidebar {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.introductionActions {
+  display: flex;
+  margin-bottom: 38px;
+  gap: 7px;
+}
+
+.introductionActions a {
+  display: block;
+  width: 39px;
+  line-height: 0;
+}
+
+.introductionActions img {
+  width: 100%;
+}
+
+.introductionContact {
+  width: 233px;
+  margin-bottom: 22px;
+}
+
+.introductionLocation {
+  width: 124px;
+}
+
+.peaceMark {
+  width: 84px;
+  margin-top: 56px;
+}
+
+.fullText { width: 100%; }
+
+.contactSection {
+  border-bottom: 0;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 18px 24px 22px;
+  color: #a6a6a6;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .header {
+    min-height: 140px;
+    padding: 60px 32px 28px;
+  }
+
+  .section {
+    padding-inline: 32px;
+  }
+
+  .introduction {
+    grid-template-columns: 240px minmax(0, 1fr);
+    column-gap: 56px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    min-height: 108px;
+    padding: 40px 18px 24px;
+  }
+
+  .homeLink {
+    width: 150px;
+  }
+
+  .contactLink {
+    font-size: 14px;
+  }
+
+  .fixedLogoText {
+    display: none;
+  }
+
+  .section {
+    padding: 56px 18px 80px;
+  }
+
+  .introduction {
+    display: grid;
+    min-height: 0;
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+    padding-top: 56px;
+  }
+
+  .introductionActions {
+    margin-bottom: 28px;
+  }
+
+  .peaceMark {
+    width: 56px;
+    margin-top: 36px;
+  }
+}

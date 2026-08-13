@@ -31,16 +31,20 @@ const categoryById = new Map<number, IndustryCategory>(
 
 export const CLIENT_LOGOS = Array.from({ length: 64 }, (_, index) => {
   const id = index + 1;
-  const extension = id <= 61 ? "png" : "svg";
   const category = categoryById.get(id);
 
   if (!category) throw new Error(`Missing client category for logo ${id}`);
 
   return {
     id,
-    src: `/images/clients/brand logo (${id}).${extension}`,
+    src: `/images/clients/brand logo (${id}).svg`,
     category,
-    href: id === 2 ? "/brand-pages/angelalign" : undefined,
+    href:
+      id === 1
+        ? "/brand-pages/johnson"
+        : id === 2
+          ? "/brand-pages/angelalign"
+          : undefined,
   };
 });
 

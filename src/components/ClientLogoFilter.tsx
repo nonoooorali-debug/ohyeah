@@ -40,7 +40,11 @@ export default function ClientLogoFilter() {
         {visibleClients.map((client) => (
           <div className={styles.clientLogoItem} key={client.id} data-logo-id={client.id}>
             {client.href ? (
-              <Link href={client.href} aria-label="View Angelalign project">
+              <Link
+                className={styles.clientLogoLink}
+                href={client.href}
+                aria-label={`View ${client.id === 1 ? "Johnson" : "Angelalign"} project`}
+              >
                 <img
                   className={styles.clientLogoImage}
                   src={client.src}

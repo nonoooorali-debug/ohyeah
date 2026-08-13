@@ -1,5 +1,6 @@
 import BrandWordCarousel from "@/components/BrandWordCarousel";
 import ClientLogoFilter from "@/components/ClientLogoFilter";
+import Link from "next/link";
 import styles from "@/styles/home.module.css";
 
 export default function Home() {
@@ -7,8 +8,8 @@ export default function Home() {
     <main className={styles.page}>
       <header className={styles.header}>
         <nav className={styles.headerNav} aria-label="Primary navigation">
-          <span>ABOUT</span>
-          <span>CONTACT</span>
+          <Link className="nav-link" href="/about">ABOUT</Link>
+          <Link className="nav-link" href="/about#contact">CONTACT</Link>
         </nav>
       </header>
 

@@ -24,9 +24,9 @@ export default function AngelalignPage() {
     <main className={styles.page}>
       <header className={styles.header}>
         <Link className={styles.homeLink} href="/" aria-label="Return to OhYeah homepage">
-          <img src={asset("angelalign brand logo.svg")} alt="OhYeah" />
+          <img src="/images/common/ohyeah logo.svg" alt="OhYeah" />
         </Link>
-        <span className={styles.contact}>CONTACT</span>
+        <Link className={`${styles.contact} nav-link`} href="/about#contact">CONTACT</Link>
       </header>
 
       <section className={styles.intro} aria-label="Angelalign project overview">

@@ -30,10 +30,12 @@
 }
 
 .contact {
+  color: inherit;
   font-size: 29px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.02em;
+  text-decoration: none;
 }
 
 .intro {
