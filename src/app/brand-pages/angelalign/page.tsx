@@ -1,23 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./angelalign.module.css";
 
 const asset = (name: string) => `/images/brand-pages/angelalign/${name}`;
 
 const gallery = [
-  "angelalign image  (9).png",
-  "angelalign image  (10).png",
-  "angelalign image  (11).png",
-  "angelalign image  (12).png",
-  "angelalign image  (13).png",
-  "angelalign image  (1).png",
-  "angelalign image  (2).png",
-  "angelalign image  (3).png",
-  "angelalign image  (4).png",
-  "angelalign image  (5).png",
-  "angelalign image  (6).png",
-  "angelalign image  (7).png",
-  "angelalign image  (8).png",
-];
+  { name: "angelalign image  (9).png", width: 1921, height: 912 },
+  { name: "angelalign image  (10).png", width: 1925, height: 1085 },
+  { name: "angelalign image  (11).png", width: 1923, height: 1083 },
+  { name: "angelalign image  (12).png", width: 1921, height: 1081 },
+  { name: "angelalign image  (13).png", width: 1930, height: 1086 },
+  { name: "angelalign image  (1).png", width: 1930, height: 747 },
+  { name: "angelalign image  (2).png", width: 1927, height: 712 },
+  { name: "angelalign image  (3).png", width: 1930, height: 1086 },
+  { name: "angelalign image  (4).png", width: 1923, height: 893 },
+  { name: "angelalign image  (5).png", width: 1923, height: 894 },
+  { name: "angelalign image  (6).png", width: 1923, height: 894 },
+  { name: "angelalign image  (7).png", width: 1916, height: 1078 },
+  { name: "angelalign image  (8).png", width: 1921, height: 1081 },
+] as const;
 
 export default function AngelalignPage() {
   return (
@@ -59,12 +60,15 @@ export default function AngelalignPage() {
       <div className={styles.sectionDivider} aria-hidden="true" />
 
       <section className={styles.gallery} aria-label="Angelalign project gallery">
-        {gallery.map((name, index) => (
-          <img
+        {gallery.map(({ name, width, height }, index) => (
+          <Image
             className={styles.galleryImage}
             src={asset(name)}
             alt={`Angelalign project visual ${index + 1}`}
-            loading={index < 2 ? "eager" : "lazy"}
+            width={width}
+            height={height}
+            sizes="100vw"
+            {...(index === 0 ? { preload: true } : { loading: "lazy" as const })}
             decoding="async"
             key={name}
           />

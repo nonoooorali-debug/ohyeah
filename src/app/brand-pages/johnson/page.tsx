@@ -1,12 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./johnson.module.css";
 
 const asset = (name: string) => `/images/brand-pages/johnson/${name}`;
 
 const gallery = [
-  "Johnson image-01.png",
-  "Johnson image-02.png",
-  "Johnson image-03.png",
+  { name: "Johnson image-01.png", width: 1921, height: 1754 },
+  { name: "Johnson image-02.png", width: 1921, height: 906 },
+  { name: "Johnson image-03.png", width: 1924, height: 1787 },
 ] as const;
 
 export default function JohnsonPage() {
@@ -40,12 +41,15 @@ export default function JohnsonPage() {
       <div className={styles.sectionDivider} aria-hidden="true" />
 
       <section className={styles.gallery} aria-label="Johnson project gallery">
-        {gallery.map((name, index) => (
-          <img
+        {gallery.map(({ name, width, height }, index) => (
+          <Image
             className={styles.galleryImage}
             src={asset(name)}
             alt={`Johnson project visual ${index + 1}`}
-            loading={index === 0 ? "eager" : "lazy"}
+            width={width}
+            height={height}
+            sizes="100vw"
+            {...(index === 0 ? { preload: true } : { loading: "lazy" as const })}
             decoding="async"
             key={name}
           />
