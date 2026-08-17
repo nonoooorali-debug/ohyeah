@@ -42,9 +42,20 @@ const legacyPngDisplaySizes: ReadonlyArray<readonly [number, number]> = [
   [102, 118], [89, 111], [119, 28], [103, 118], [122, 132],
 ];
 
+const clientPageById: Partial<Record<number, { href: string; name: string }>> = {
+  1: { href: "/brand-pages/johnson", name: "Johnson" },
+  2: { href: "/brand-pages/angelalign", name: "Angelalign" },
+  3: { href: "/brand-pages/pfizer", name: "Pfizer" },
+  5: { href: "/brand-pages/philips", name: "Philips" },
+  6: { href: "/brand-pages/abbott", name: "Abbott" },
+  22: { href: "/brand-pages/linkedcare", name: "Linkedcare" },
+  40: { href: "/brand-pages/hengqingsong", name: "Hengqingsong" },
+};
+
 export const CLIENT_LOGOS = Array.from({ length: 64 }, (_, index) => {
   const id = index + 1;
   const category = categoryById.get(id);
+  const projectPage = clientPageById[id];
 
   if (!category) throw new Error(`Missing client category for logo ${id}`);
 
@@ -53,12 +64,8 @@ export const CLIENT_LOGOS = Array.from({ length: 64 }, (_, index) => {
     src: `/images/clients/brand logo (${id}).svg`,
     category,
     displaySize: legacyPngDisplaySizes[index] ?? [166, 166],
-    href:
-      id === 1
-        ? "/brand-pages/johnson"
-        : id === 2
-          ? "/brand-pages/angelalign"
-          : undefined,
+    href: projectPage?.href,
+    projectName: projectPage?.name,
   };
 });
 

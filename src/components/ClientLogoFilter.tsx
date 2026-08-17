@@ -54,7 +54,7 @@ export default function ClientLogoFilter() {
               <Link
                 className={styles.clientLogoLink}
                 href={client.href}
-                aria-label={`View ${client.id === 1 ? "Johnson" : "Angelalign"} project`}
+                aria-label={`View ${client.projectName} project`}
               >
                 <img
                   className={styles.clientLogoImage}
