@@ -46,9 +46,15 @@ const clientPageById: Partial<Record<number, { href: string; name: string }>> = 
   1: { href: "/brand-pages/johnson", name: "Johnson" },
   2: { href: "/brand-pages/angelalign", name: "Angelalign" },
   3: { href: "/brand-pages/pfizer", name: "Pfizer" },
+  4: { href: "/brand-pages/3s", name: "3S" },
   5: { href: "/brand-pages/philips", name: "Philips" },
   6: { href: "/brand-pages/abbott", name: "Abbott" },
+  8: { href: "/brand-pages/tencent-healthcare", name: "Tencent Healthcare" },
+  9: { href: "/brand-pages/united-imaging", name: "United Imaging" },
+  10: { href: "/brand-pages/gensci", name: "Gensci" },
   22: { href: "/brand-pages/linkedcare", name: "Linkedcare" },
+  31: { href: "/brand-pages/mooeli", name: "Mooeli" },
+  32: { href: "/brand-pages/lechipai", name: "Lechipai" },
   40: { href: "/brand-pages/hengqingsong", name: "Hengqingsong" },
 };
 

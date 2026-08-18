@@ -138,6 +138,65 @@
   width: 100%;
 }
 
+.insetGallery {
+  display: flex;
+  padding: 45px 28px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.insetGalleryImage {
+  width: 100%;
+  max-width: 1864px;
+}
+
+.sequenceDivider {
+  margin-top: 45px;
+}
+
+.textBlock {
+  padding: 80px 60px;
+}
+
+.textImage {
+  display: block;
+  width: 100%;
+  max-width: 1803px;
+  height: auto;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.fullGallery {
+  width: 100%;
+}
+
+.fullGalleryImage,
+.comingSoonImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.comingSoon {
+  padding-top: 45px;
+}
+
+.videoBlock {
+  width: 100%;
+  padding: 45px 0;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  object-fit: contain;
+}
+
 @media (max-width: 900px) {
   .header {
     padding: 40px 24px 0;
@@ -164,7 +223,12 @@
     padding-inline: 18px;
   }
 
-  .linkedTextBlock {
+  .insetGallery {
+    padding-inline: 18px;
+  }
+
+  .linkedTextBlock,
+  .textBlock {
     padding: 60px 24px;
   }
 }
@@ -203,11 +267,22 @@
     padding-inline: 12px;
   }
 
-  .linkedSecondDivider {
+  .insetGallery {
+    padding-inline: 12px;
+  }
+
+  .linkedSecondDivider,
+  .sequenceDivider {
     margin-top: 36px;
   }
 
-  .linkedTextBlock {
+  .linkedTextBlock,
+  .textBlock {
     padding: 48px 18px;
+  }
+
+  .comingSoon,
+  .videoBlock {
+    padding-top: 36px;
   }
 }
