@@ -52,9 +52,12 @@ const clientPageById: Partial<Record<number, { href: string; name: string }>> = 
   8: { href: "/brand-pages/tencent-healthcare", name: "Tencent Healthcare" },
   9: { href: "/brand-pages/united-imaging", name: "United Imaging" },
   10: { href: "/brand-pages/gensci", name: "Gensci" },
+  12: { href: "/brand-pages/rio", name: "Rio" },
   22: { href: "/brand-pages/linkedcare", name: "Linkedcare" },
+  29: { href: "/brand-pages/maishichun", name: "Maishichun" },
   31: { href: "/brand-pages/mooeli", name: "Mooeli" },
   32: { href: "/brand-pages/lechipai", name: "Lechipai" },
+  36: { href: "/brand-pages/dolu-shine", name: "Dolu Shine" },
   40: { href: "/brand-pages/hengqingsong", name: "Hengqingsong" },
 };
 
